@@ -1,3 +1,4 @@
+
 # SEE THE CONTAINER AVAILABLE
 docker container ls -a
 
@@ -19,6 +20,7 @@ docker container stop contohredis
 # REMOVE THE CONTAINER
 #docker container rm "CONTAINER NAME"
 docker container rm "contohredis"
+
 
 
 
