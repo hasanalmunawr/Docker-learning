@@ -22,6 +22,9 @@ docker container stop contohredis
 docker container rm "contohredis"
 
 
+BERIKAN PERUBAHAN YANG TIDAK ADA MAKNANYA
+
+
 
 
 
