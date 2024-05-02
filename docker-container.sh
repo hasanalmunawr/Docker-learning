@@ -22,8 +22,6 @@ docker container stop contohredis
 docker container rm "contohredis"
 
 
-BERIKAN PERUBAHAN YANG TIDAK ADA MAKNANYA
-AND ALSO TO REINFORCE THE SKILL OF PROGRAMMING, WE HAVE TO
 
 
 
