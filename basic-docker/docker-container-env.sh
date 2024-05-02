@@ -12,3 +12,7 @@ docker container create --name contohpostgres --publish 5432:5432 --env POSTGRES
 # MONGODB
 docker container create --name contohmongo --publish 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=hasan --env MONGO_INITDB_ROOT_PASSWORD=password postgres:latest
 
+#  environment:
+ #      POSTGRES_USER: postgres
+ #      POSTGRES_PASSWORD: password
+ #      POSTGRES_DB: users
