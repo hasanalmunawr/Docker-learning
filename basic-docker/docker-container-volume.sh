@@ -24,4 +24,5 @@ docker container stop nginxbackup
 docker container rm nginxbackup
 
 # DO IN ONCE WAY
+#docker container run --rm --name (CONTAINER_NAME) -v (FOLDER_SOURCE):(FOLDER_DESTINATION) -v (FOLDER_SOURCE):(FOLDER_DESTINATION) (IMAGE):(TAG) tar cvf backup/(FILE_NAME).tar.gz /(DIRECTORY)
 docker container run --rm --name ubuntubackup -v /home/hasanalmunawr/Devlopment/Docker/belajar-docker-dasar/basic-docker/backup:/backup -v postgresvolume:/data ubuntu:latest tar cvf backup/backup3.tar.gz /data
