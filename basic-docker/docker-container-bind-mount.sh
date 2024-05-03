@@ -1,11 +1,14 @@
 # Mounting
+
+# USING --mount
 # docker container create --name namacontainer --mount “type=bind,source=folder,destination=folder,readonly” image:tag
-
-
-docker container create --name postgresdate -v /home/hasanalmunawr/Devlopment/Docker/belajar-docker-dasar/basic-docker/postgres-data:/data/pgdata --publish 1234:5432 --env POSTGRES_USER=hasan --env POSTGRES_PASSWORD=password --env POSTGRES_DB=users postgres:latest
-
 docker container create --name datapostgres --mount "type=bind, source=/home/hasanalmunawr/Devlopment/Docker/belajar-docker-dasar/basic-docker/postgres-data, destination=/data/pgdata" --publish 5431:5432 --env POSTGRES_USER=hasan --env POSTGRES_PASSWORD=password postgres:latest
 
+# USING --v
+#docker container create --name postgresdate -v (FOLDER_SOURCE):(FOLDER_DESTINATION) --publish 1234:5432 --env POSTGRES_USER=hasan --env POSTGRES_PASSWORD=password --env POSTGRES_DB=users postgres:latest
+docker container create --name postgresdate -v /home/hasanalmunawr/Devlopment/Docker/belajar-docker-dasar/basic-docker/postgres-data:/data/pgdata --publish 1234:5432 --env POSTGRES_USER=hasan --env POSTGRES_PASSWORD=password --env POSTGRES_DB=users postgres:latest
+
+# PREVIX USING --v
   -v /home/hasanalmunawr/Devlopment/Docker/belajar-docker-dasar/basic-docker/postgres-data:/data/pgdata \
 # THE CORRECT VERSION FROM GEMINI AI
 docker container create --name datapostgres \
