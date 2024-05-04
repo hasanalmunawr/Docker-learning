@@ -1,30 +1,31 @@
 # STEP BY STEP CRATE A NETWORK CONTAINER
-docker network create --driver bridge newnetwork
+# MONGO DB VERSION
+docker network create --driver bridge mongonetwork
 
-# MONGO DB
-docker container create --name mongodb --network newnetwork --env MONGO_INITDB_ROOT_USERNAME=eko --env MONGO_INITDB_ROOT_PASSWORD=eko mongo:latest
+#CREATE CONTAINER
+#docker container create --name mongodb --network (NETWORK_NAME) --env MONGO_INITDB_ROOT_USERNAME=hasan --env MONGO_INITDB_ROOT_PASSWORD=hasan mongo:latest
+docker container create --name mongodb --network mongonetwork --env MONGO_INITDB_ROOT_USERNAME=hasan --env MONGO_INITDB_ROOT_PASSWORD=hasan mongo:latest
 
-# POSTGRES
-docker container create --name postgresdb --network postnetwork --publish 5434:5432 --env POSTGRES_PASSWORD=password postgres:latest
-
-docker image pull mongo-express:latest
-
-docker container create --name mongodbexpress --network mongonetwork --publish 8081:8081 --env ME_CONFIG_MONGODB_URL="mongodb://eko:eko@mongodb:27017/" mongo-express:latest
+# CREATE SENCOND CONTAINER TO BE A THIRD PARTY (OPSIONAL DEPEND ON YOUR SELF)
+docker container create --name mongodbexpress --network mongonetwork --publish 8081:8081 --env ME_CONFIG_MONGODB_URL="mongodb://hasan:hasan@mongodb:27017/" mongo-express:latest
 
 docker container start mongodb
 
 docker container start mongodbexpress
 
+# STOP CONNECTION
 docker network disconnect mongonetwork mongodb
 
+# START CONNECTION
 docker network connect mongonetwork mongodb
 
 
-# CREATE CONTAINER NETWORK BY HASAN
-docker network create postnetwork
-#docker container create --name namacontainer --network namanetwork image:tag
-dockerc container create --name
+# CREATE CONTAINER
+# POSTGRES VERSION
+docker network create --driver bridge postnetwork
 
-#docker container create --name postdb --network postnetwork --env POSTGRES_PASSWORD=password postgres:latest
+#docker container create --name postgresdb --network (NETWORK_NAME) --publish 5434:5432 --env POSTGRES_PASSWORD=password postgres:latest
+docker container create --name postgresdb --network postnetwork --publish 5434:5432 --env POSTGRES_PASSWORD=password postgres:latest
 
-docker container create --name postgresdb --publish 5432:5432 --env POSTGRES_PASSWORD=password postgres:latest
+docker container start postdb
+
