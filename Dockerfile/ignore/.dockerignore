@@ -1,0 +1,8 @@
+#  TO IGNORE THE DIRECTORY
+text/temp
+
+# TO IGNORE FILES
+text/*.log
+
+
+

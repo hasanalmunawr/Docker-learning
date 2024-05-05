@@ -29,3 +29,35 @@ docker image inspect hasan/label
 docker build -t hasan/add add
 
 docker container create --name add hasan/add
+
+
+#COPY Instruction
+docker build -t hasan/copy copy
+#why must be start with sudo????
+
+docker container create --name copy hasan/copy
+
+docker container start copy
+
+docker container logs copy
+
+# IGNORE
+docker build -t hasan/ignore ignore
+
+docker container create --name ignore hasan/ignore
+
+docker container start ignore
+
+docker container logs ignore
+
+# EXPOSE Intruction
+docker build -t hasan/expose expose
+
+docker container create --name expose hasan/expose
+
+docker container start expose
+
+docker container inspect expose
+
+docker container logs expose
+
