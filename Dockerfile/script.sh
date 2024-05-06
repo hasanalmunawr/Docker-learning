@@ -101,6 +101,45 @@ sudo docker container exec -i -t user /bin/bash
 
 whoami
 
+#ARGUMENT Instruction
+docker build -t hasan/arg argument --build-arg app=hsn
+
+docker container create --name arg -p 9191:9191 hasan/arg
+
+docker container start arg
+
+docker container exec -i -t arg /bin/bash
+
+docker container logs arg
+
+# HEALTH Intruction
+docker build -t hasan/health health
+
+docker container create --name health -p 8080:8080 hasan/health
+
+docker container start health
+
+docker container ls
+
+docker container inspect health
+
+#ENTRYPOINT Instruction
+docker build -t hasan/entrypoint entrypoint
+
+docker container create --name entrypoint -p 8080:8080 hasan/entrypoint
+
+docker container start entrypoint
+
+docker container logs entrypoint
+
+docker container exec -t -i entrypoint /bin/bash
+
+#MULTI Intruction
+docker build -t hasanalmunawr/multi multi
+
+docker container create --name multi -p 8083:8080 hasanalmunawr/multi
+
+docker push hasanalmunawr/multi
 
 
 
