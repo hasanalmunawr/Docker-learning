@@ -68,4 +68,26 @@ docker build -t hasan/env env
 
 docker container create --name env --env APP_PORT=9191 -p 9191:9191 hasan/env
 
-#
+#VOLUME Instruction
+docker build -t hasan/volume volume
+
+docker image inspect hasan/volume
+
+docker container create --name volume --env APP_PORT=8080 -p 8080:8080 hasan/volume
+
+docker container start hasan/volume
+
+#e44deee0338d54be083135ee65a4aaa7b5ee08f28d4f009845eee674753040aa
+
+docker volume ls
+
+# WORKDIR Intruction
+docker build -t hasan/workdir workdir
+
+docker container create --name workdir -p 8080:8080 hasan/workdir
+
+sudo docker container start workdir
+
+sudo docker container exec -i -t workdir /bin/bash
+
+# USER Intruction
