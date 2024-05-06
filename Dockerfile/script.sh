@@ -53,7 +53,7 @@ docker container logs ignore
 # EXPOSE Intruction
 docker build -t hasan/expose expose
 
-docker container create --name expose hasan/expose
+docker container create --name expose -p 8080:8080 hasan/expose
 
 docker container start expose
 
@@ -61,3 +61,11 @@ docker container inspect expose
 
 docker container logs expose
 
+curl localhost:8080
+
+#ENV Instruction
+docker build -t hasan/env env
+
+docker container create --name env --env APP_PORT=9191 -p 9191:9191 hasan/env
+
+#
