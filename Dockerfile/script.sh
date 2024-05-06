@@ -91,3 +91,16 @@ sudo docker container start workdir
 sudo docker container exec -i -t workdir /bin/bash
 
 # USER Intruction
+docker build -t hasan/user user
+
+docker container create --name user -p 8080:8181 hasan/user
+
+docker container start workdir
+
+sudo docker container exec -i -t user /bin/bash
+
+whoami
+
+
+
+
