@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  nginx-sample:
+    container_name: nginx-sample
+    image: nginx:latest
+  redis-sample:
+    container_name: redis-sample2
+    image: redis:latest

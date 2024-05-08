@@ -1,6 +1,6 @@
 # STEP BY STEP TO BACK-UP
 
-sudo docker volume create postgredata
+sudo docker bind-mount create postgredata
 
 # CREATE THE CONTAINER
 # Version --mount

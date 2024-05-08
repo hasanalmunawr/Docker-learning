@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  nginx-short:
+    container_name: nginx-short
+    image: nginx:latest
+    ports:
+      - "8080:80"
+
+  nginx-long:
+    container_name: nginx-long
+    image: nginx:latest
+    ports:
+      - protocol: tcp
+        published: 8081 # outside Container
+        target: 80 # inside Container

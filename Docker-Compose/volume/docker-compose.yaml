@@ -1,0 +1,30 @@
+
+
+services:
+
+
+  mongodb2:
+    image: mongo:latest
+    container_name: mongodb2
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+
+    volumes:
+      - type: bind
+        source: "./data-mongo2"
+        target: "/data/db"
+        read_only: false
+
+
+
+
+
+volumes:
+  mongo-data1:
+    name: mongo-data1
+  mongo-data2:
+    name: mongo-data2

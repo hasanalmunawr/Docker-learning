@@ -1,0 +1,33 @@
+#version: "3.8"
+
+services:
+
+  postgres-volume:
+    container_name: postgres-bind-mount
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: users
+#    SHORT WAY
+    volumes:
+      - "./postgres-data:/var/lib/postgresql/data"
+
+
+  postgres-volume2:
+    container_name: postgres-volume2
+    image: postgres:latest
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: hasan
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: users2
+#    LONG WAY
+    volumes:
+      - type: bind
+        source: "./postdb2"
+        target: "/var/lib/postgresql/data"
+        read_only: false

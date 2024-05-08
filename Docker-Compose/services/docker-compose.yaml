@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+
+#  this is an example
+  nginx-sample1:
+    container_name: nginx-sample1
+    image: nginx:latest
+
+#  this is an example
+  nginx-sample2:
+    container_name: nginx-sample2
+    image: nginx:latest
