@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  mongodb1:
+    image: mongo:latest
+    container_name: mongodb1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hasan
+      MONGO_INITDB_ROOT_PASSWORD: hasan
+      MONGO_INITDB_DATABASE: admin
+
+    networks:
+      - network-ex
+
+
+
+
+
+networks:
+  network-ex:
+    name: network-ex
+    driver: bridge
