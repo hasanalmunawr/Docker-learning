@@ -14,10 +14,6 @@ services:
     networks:
       - network-ex
 
-
-
-
-
 networks:
   network-ex:
     name: network-ex
