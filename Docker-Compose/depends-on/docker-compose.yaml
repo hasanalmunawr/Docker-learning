@@ -1,4 +1,4 @@
-version: "3.9"
+#version: "3.9"
 
 services:
   mongodb1:
@@ -14,7 +14,7 @@ services:
   mongodb-express-example:
     image: mongo-express:latest
     container_name: mongodb-express-example
-#    restart: always
+    restart: always
     ports:
       - "8081:8081"
     environment:
@@ -24,7 +24,7 @@ services:
     networks:
       - network_example
     depends_on:
-      - mongodb-example
+      - mongodb1
 
 networks:
   network_example:

@@ -14,3 +14,10 @@ docker compose stop
 docker compose down
 
 docker compose ls
+
+#MONITOR EVENT
+#docker events --filter ‘container=nama’
+docker events --filter mongo
+
+#CHECK CONTAINER STATUS
+docker compose stats
