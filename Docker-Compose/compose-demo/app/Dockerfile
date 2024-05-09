@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/build:1
 FROM python:3.10-alpine
 WORKDIR /code
 ENV FLASK_APP=app.py

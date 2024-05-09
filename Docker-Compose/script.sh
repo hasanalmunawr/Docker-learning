@@ -21,3 +21,9 @@ docker events --filter mongo
 
 #CHECK CONTAINER STATUS
 docker compose stats
+
+#CREATE ONLY IMAGE
+docker compose build
+
+CREATE EXTEND CONTAINER MODE
+docker compose -f docker-compose.yaml -f dev.yaml create
